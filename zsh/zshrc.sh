@@ -70,7 +70,7 @@
 
 # Aliases
 	alias v="vim -p"
-	alias ls="exa"
+	alias ls="eza"
 	
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
 	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
@@ -88,7 +88,7 @@
 	# Custom cd
 	c() {
 		cd $1;
-		exa;
+		eza;
 	}
 	alias cd="c"
 
@@ -118,4 +118,3 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
 fi
 
 source ~/dotfiles/zsh/prompt.sh
-
