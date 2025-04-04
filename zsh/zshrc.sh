@@ -54,8 +54,8 @@
 
 	# zsh config
 	HISTFILE=~/.zsh_history
-	SAVEHIST=1000 
-	setopt inc_append_history # To save every command before it is executed 
+	SAVEHIST=1000
+	setopt inc_append_history # To save every command before it is executed
 	setopt share_history # setopt inc_append_history
 
 	# macOS Rosetta
@@ -69,11 +69,7 @@
 	fi
 
 # Aliases
-	alias v="vim -p"
-	alias ls="exa"
-	
-	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
-	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
+	type eza 2>&- >&- && alias ls="eza"
 
 # Settings
 	export VISUAL=vim
@@ -88,11 +84,11 @@
 	# Custom cd
 	c() {
 		cd $1;
-		exa;
+		eza;
 	}
-	alias cd="c"
 
-# For vim mappings: 
+
+# For vim mappings:
 	stty -ixon
 
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
@@ -118,4 +114,3 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
 fi
 
 source ~/dotfiles/zsh/prompt.sh
-

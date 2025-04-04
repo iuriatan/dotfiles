@@ -39,3 +39,14 @@ if [ -d $ASDF_DATA_DIR ]; then
 	. $ASDF_DATA_DIR/asdf.sh
 fi
 
+# rustup
+if [ -d "$HOME/.cargo/" ]; then
+	. "$HOME/.cargo/env"
+fi
+
+# solana-cli
+SOLANA_CLI_DIR=$HOME/.local/share/solana/install/active_release/bin
+
+if [ -d $SOLANA_CLI_DIR ]; then
+	export PATH=$PATH:$SOLANA_CLI_DIR
+fi
