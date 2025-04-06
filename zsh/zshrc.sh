@@ -19,24 +19,6 @@
 		export PATH=$PATH:$ANDROID_HOME/platform-tools
 	fi
 
-	# zsh completions
-	if [ -d $ASDF_DIR ]; then
-		MACOS_DOCKER_COMPLETION=/Applications/Docker.app/Contents/Resources/etc/docker.zsh-completion
-		if [ "$(uname -s)" = 'Darwin' -a -r "$MACOS_DOCKER_COMPLETION" -a ! -f  "${ASDF_DIR}/completions/_docker" ]; then
-			ln -s "$MACOS_DOCKER_COMPLETION" "$ASDF_DIR/completions/_docker"
-		fi
-
-		if type brew &>/dev/null
-		then
-			fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
-		fi
-
-
-		fpath=(${ASDF_DIR}/completions $fpath)
-		autoload -Uz compinit && compinit
-	fi
-
-
 	# mint binaries
 	if [ -d $HOME/.mint/bin ]; then
 		export PATH=$HOME/.mint/bin:$PATH
