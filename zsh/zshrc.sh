@@ -1,4 +1,9 @@
 # Vars
+	if $(which vim &> /dev/null); then
+		export SYSTEMD_EDITOR=vim
+		export EDITOR=vim
+	fi
+
 	# Python PIP installed tools
 	if [ -d $HOME/.local/bin ]; then
 		export PATH=$HOME/.local/bin:$PATH
